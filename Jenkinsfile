@@ -6,9 +6,19 @@ pipeline {
     }
     
     stages {
+        stage('Init') {
+            steps {
+                script {
+                    myScript = load "script.groovy"
+                }
+            }
+        }
         stage('Build') {
             steps {
-                echo 'building...'
+                script {
+                    myScript.buildApp()
+                }
+                
             }
         }
         stage('Test') {
@@ -18,12 +28,16 @@ pipeline {
                 }
             }
             steps {
-                echo 'testing...'
+                script {
+                    myScript.testApp()
+                }
             }
         }
         stage('Deploy') {
             steps {
-                echo "deploying version ${params.version}"
+                script {
+                    myScript.deployApp()
+                }
             }
         }
             
