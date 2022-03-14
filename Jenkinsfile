@@ -1,3 +1,4 @@
+@Library("shared-lib-test") _
 pipeline {
     agent any
     parameters {
@@ -17,6 +18,7 @@ pipeline {
             steps {
                 script {
                     myScript.buildApp()
+                    helloWorld()
                 }
                 
             }
