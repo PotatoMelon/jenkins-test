@@ -24,7 +24,7 @@ pipeline {
 //                 }
 //             }
             steps {
-                'test stage'
+                sh 'test stage'
             }
         }
         stage('Deploy') {
