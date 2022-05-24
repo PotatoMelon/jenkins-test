@@ -9,17 +9,12 @@ pipeline {
     stages {
         stage('Init') {
             steps {
-                script {
-                    myScript = load "script.groovy"
-                }
+
             }
         }
         stage('Build') {
             steps {
-                script {
-                    myScript.buildApp()
-                    helloWorld()
-                }
+
                 
             }
         }
@@ -30,16 +25,11 @@ pipeline {
                 }
             }
             steps {
-                script {
-                    myScript.testApp()
-                }
             }
         }
         stage('Deploy') {
             steps {
-                script {
-                    myScript.deployApp()
-                }
+
             }
         }
             
