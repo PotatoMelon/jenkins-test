@@ -9,27 +9,27 @@ pipeline {
     stages {
         stage('Init') {
             steps {
-
+                sh 'init stage'
             }
         }
         stage('Build') {
             steps {
-
-                
+                sh 'build stage'
             }
         }
         stage('Test') {
-            when {
-                expression {
-                    params.executeTests
-                }
-            }
+//             when {
+//                 expression {
+//                     params.executeTests
+//                 }
+//             }
             steps {
+                'test stage'
             }
         }
         stage('Deploy') {
             steps {
-
+                sh 'deploy stage'
             }
         }
             
